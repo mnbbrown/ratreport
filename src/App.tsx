@@ -1,45 +1,30 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { Link } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+    <div className="flex items-center justify-center min-h-screen">
+      <div>
+        <div className="text-center">
+          <h1 className="text-2xl">Report a RAT</h1>
+          <span className="text-sm">
+            Report your RAT (Rapid Antigen Test) result
+          </span>
+        </div>
+        <div className="mt-16 p-6 w-full text-center bg-orange-400 text-orange-900 rounded-md font-semibold">
+          <div className="text-4xl">32,000</div>
+          <div className="text-sm">positive</div>
+        </div>
+        <div className="mb-16 text-sm text-center mt-4">
+          1,000 negative. <br />
+          96.9% case positivity rate. <br />
+          History coming soon
+        </div>
+        <div className="text-center">
+          <Link to="/report">Report your result &rarr;</Link>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
